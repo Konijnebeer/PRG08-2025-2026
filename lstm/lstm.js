@@ -70,7 +70,7 @@ export class LSTM {
             verbose: 0,
             callbacks: {
                 onEpochEnd: (epoch, logs) => {
-                    const percent = Math.round(((epoch + 1) / 30) * 100);
+                    const percent = Math.round(((epoch + 1) / this.settings.epochs) * 100);
                     console.log(`Training... ${percent}% (Epoch ${epoch + 1}/${this.settings.epochs}, loss=${logs.loss.toFixed(4)})`);
                 }
             }
